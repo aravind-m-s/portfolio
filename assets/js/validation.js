@@ -25,30 +25,35 @@ formvalue.addEventListener('submit', (e) => {
 function checkInput() {
     if (nameValue === '' || nameValue === null) {
         document.getElementById("name-error").style.visibility = "visible"
+        userName.style.borderColor = "red";
         error =1;
     } else {
         document.getElementById("name-error").style.visibility = "hidden"
-        error1=0;
+        userName.style.borderColor = "";
+
     }
     if (emailValue === '' || emailValue === null || !emailValue.match(regx)) {
         document.getElementById("email-error").style.visibility = "visible"
         error = 1;
+        userEmail.style.borderColor = "red";
     } else {
         document.getElementById("email-error").style.visibility = "hidden"
-        error2=0;
+        userEmail.style.borderColor = "";
     }
     if (subjectValue === '' || subjectValue === null) {
         document.getElementById("subject-error").style.visibility = "visible"
         error = 1;
+        userSubject.style.borderColor = "red";
     } else {
         document.getElementById("subject-error").style.visibility = "hidden"
-        error3=0;
+        userSubject.style.borderColor = "";
     }
     if (messageValue === '' || messageValue === null) {
         document.getElementById("message-error").style.visibility = "visible"
         error = 1;
+        userMessage.style.borderColor = "red";
     } else {
         document.getElementById("message-error").style.visibility = "hidden"
-        error4 = 0;
+        userMessage.style.borderColor = "";
     }
 }
