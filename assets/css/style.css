@@ -1419,8 +1419,13 @@ footer .credits a {
 
 
 #form label{
-  visibility: hidden; 
   font-size: 14px;
   margin-left: 10px;
   color: red;
+}
+
+#submitted-msg{
+  display: none;
+  padding-bottom: 10px;
+  font-size: 20px;
 }

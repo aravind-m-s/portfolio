@@ -18,42 +18,61 @@ formvalue.addEventListener('submit', (e) => {
     checkInput();
     if(error == 0){
         formvalue.reset();
+        document.getElementById("submitted-msg").style.display = "block"
+    }else{
+        document.getElementById("submitted-msg").style.display = "none"
     }
 
 })
 
 function checkInput() {
     
-    if (nameValue === '' || nameValue[0] === ' ') {
-        document.getElementById("name-error").style.visibility = "visible"
+    if (nameValue === '') {
+        document.getElementById("name-error").innerHTML = "Name cannot be empty";
+        userName.style.borderColor = "red";
+        error = 1;
+    }else if(nameValue[0] === ' '){
+        document.getElementById("name-error").innerHTML = "There should be no space before name";
         userName.style.borderColor = "red";
         error = 1;
     } else {
-        document.getElementById("name-error").style.visibility = "hidden"
+        document.getElementById("name-error").innerHTML = ""
         userName.style.borderColor = "";
     }
-    if (emailValue === '' || !emailValue.match(regx)) {
-        document.getElementById("email-error").style.visibility = "visible"
-        error = 1;
+    if (emailValue === '') {
+        document.getElementById("email-error").innerHTML = "Email cannot be empty";
         userEmail.style.borderColor = "red";
-    } else {
-        document.getElementById("email-error").style.visibility = "hidden"
+        error = 1;
+    }else if(!emailValue.match(regx)){
+        document.getElementById("email-error").innerHTML = "Email is invalid";
+        userEmail.style.borderColor = "red";
+        error = 1;
+    }else {
+        document.getElementById("email-error").innerHTML = ""
         userEmail.style.borderColor = "";
     }
-    if (subjectValue === '' || subjectValue[0] === ' ') {
-        document.getElementById("subject-error").style.visibility = "visible"
-        error = 1;
+    if (subjectValue === '') {
+        document.getElementById("subject-error").innerHTML = "Subject cannot be empty";
         userSubject.style.borderColor = "red";
+        error = 1;
+    }else if(subjectValue[0] === ' '){
+        document.getElementById("subject-error").innerHTML = "There should be no space before Subject";
+        userSubject.style.borderColor = "red";
+        error = 1;
     } else {
-        document.getElementById("subject-error").style.visibility = "hidden"
+        document.getElementById("subject-error").innerHTML = ""
         userSubject.style.borderColor = "";
     }
-    if (messageValue === '' || messageValue[0] === ' ') {
-        document.getElementById("message-error").style.visibility = "visible"
-        error = 1;
+    if (messageValue === '') {
+        document.getElementById("message-error").innerHTML = "Message cannot be empty";
         userMessage.style.borderColor = "red";
+        error = 1;
+    }else if(messageValue[0] === ' '){
+        document.getElementById("message-error").innerHTML = "There should be no space before Message";
+        userMessage.style.borderColor = "red";
+        error = 1;
     } else {
-        document.getElementById("message-error").style.visibility = "hidden"
+        document.getElementById("message-error").innerHTML = ""
         userMessage.style.borderColor = "";
     }
 }
